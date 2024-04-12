@@ -4,6 +4,20 @@ import (
 	"fmt"
 )
 
+func printMessage(message string, iterarions int) {
+	for i := 0; i < iterarions; i++ {
+		fmt.Printf("Message: %s, Iteration: %d of %d\n", message, i+1, iterarions)
+	}
+}
+
+func sum2Integers(a, b int) int {
+	return a + b
+}
+
+func applyCommonOperators(a, b int) (addition, subtraction, multiplication, division int) {
+	return a + b, a - b, a * b, a / b
+}
+
 func main() {
 
 	const pi float64 = 3.14
@@ -31,12 +45,10 @@ func main() {
 
 	x := 17
 	y := 24
-
-	result := x + y
-	fmt.Println("Suma:", result)
+	fmt.Println("Suma:", sum2Integers(x, y))
 
 	// Result variable reassignment ':= value', must be '='
-	result = x - y
+	result := x - y
 	fmt.Println("Resta:", result)
 
 	result = x * y
@@ -56,6 +68,13 @@ func main() {
 
 	fmt.Printf("La variable 'courses' es de tipo : %T\n", courses)
 
-	var message string = fmt.Sprintf("%v tiene más de %v cursos\n", platform_name, courses)
-	fmt.Println(message)
+	printMessage("Hello World!", 3)
+
+	// Multiple assignment with multiple return functions
+	addition, substraction, multiplication, division := applyCommonOperators(x, y)
+	fmt.Printf("Suma: %d, Resta: %d, Multiplicacion: %d, Division: %d\n", addition, substraction, multiplication, division)
+
+	// Multiple assignment with multiple return functions: Select variables to assign from function
+	addition1, _, _, division1 := applyCommonOperators(x, y)
+	fmt.Printf("Suma: %d, Division: %d\n", addition1, division1)
 }

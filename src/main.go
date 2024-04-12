@@ -12,7 +12,7 @@ func main() {
 	fmt.Println("Pi: ", pi)
 	fmt.Println("Pi 2: ", pi2)
 
-	base := 12          // Declare variable, assign value and infer data type
+	base := 12          // Declare variable, assign value and infer data type first assignation
 	var altura int = 14 // Declare variable, assign value and assign data type
 	var area int        // Declare variable, and assign data type
 
@@ -28,4 +28,23 @@ func main() {
 	var d bool
 
 	fmt.Println(a, b, c, d)
+
+	x := 17
+	y := 24
+
+	result := x + y
+	fmt.Println("Suma:", result)
+
+	// Result variable reassignment ':= value', must be '='
+	result = x - y
+	fmt.Println("Resta:", result)
+
+	result = x * y
+	fmt.Println("Multiplicacion:", result)
+
+	result = x / y
+	fmt.Println("Division:", result)
+
+	result = x % y
+	fmt.Println("Modulo:", result)
 }

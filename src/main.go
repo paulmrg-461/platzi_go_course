@@ -47,4 +47,15 @@ func main() {
 
 	result = x % y
 	fmt.Println("Modulo:", result)
+
+	platform_name := "Platzi"
+	courses := 500
+
+	// %s: text, %d: numeric, %v any datatype, %T: Get datatype
+	fmt.Printf("%s tiene más de %d cursos\n", platform_name, courses)
+
+	fmt.Printf("La variable 'courses' es de tipo : %T\n", courses)
+
+	var message string = fmt.Sprintf("%v tiene más de %v cursos\n", platform_name, courses)
+	fmt.Println(message)
 }

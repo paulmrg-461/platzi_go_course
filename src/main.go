@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"strconv"
 )
 
 func printMessage(message string, iterarions int) {
@@ -87,4 +89,11 @@ func main() {
 	fmt.Printf("Suma: %d, Division: %d\n", addition1, division1)
 
 	forWhile(10)
+
+	// Convert text to number
+	value, err := strconv.Atoi("17")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Converted value = %d\n", value)
 }

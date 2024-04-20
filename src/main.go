@@ -32,6 +32,14 @@ func comparePairNumber(number int) bool {
 	return number%2 == 0
 }
 
+func fibonacci(n int) int {
+	if n < 2 {
+		return n
+	} else {
+		return (fibonacci(n-1) + fibonacci(n-2))
+	}
+}
+
 func main() {
 
 	const pi float64 = 3.14
@@ -109,4 +117,31 @@ func main() {
 		}
 		fmt.Printf("Number %d: is odd\n", i)
 	}
+
+	// Print if number is pair using switch sentence
+	for i := 0; i <= 10; i++ {
+		switch condition := i % 2; condition {
+		case 0:
+			fmt.Printf("Number %d: is pair\n", i)
+		default:
+			fmt.Printf("Number %d: is odd\n", i)
+		}
+	}
+
+	// Print if number is pair using switch without condition sentence
+	for i := 0; i <= 10; i++ {
+		fmt.Printf("Fibonacci: %d\n", fibonacci(i))
+	}
+
+	for i := 0; i <= 10; i++ {
+		switch {
+		case i >= 0 && i <= 5:
+			fmt.Printf("Number %d: is in 0 - 5 range\n", i)
+		case i > 5 && i <= 10:
+			fmt.Printf("Number %d: is in 5 - 10 range\n", i)
+		default:
+			fmt.Printf("Number %d: \n", i)
+		}
+	}
+
 }

@@ -144,8 +144,30 @@ func main() {
 		}
 	}
 
-	// defer keyword execute last function and after execute current
+	// defer keyword execute this function on final  current 1. Hello 2. ----, 3. World
+	// defer to close connections, streams... (Similar to dispose)
 	defer fmt.Println("World")
 	fmt.Println("Hello")
 	fmt.Println("------")
+
+	// Arrays (Immutable)
+	var array [4]int
+	array[0] = 1
+	array[1] = 2
+	fmt.Println(array, len(array), cap(array))
+
+	// Slices (To left of : is inclusive and to right of : is exclusive)
+	slice := []int{2, 0, 2, 4, 1, 17}
+	fmt.Println(slice, len(slice), cap(slice))
+	fmt.Printf("Slice[0] : %d\n", slice[0])
+	fmt.Printf("Slice[0] - [3]	: %d\n", slice[:3])
+	fmt.Printf("Slice[2] - [4]	: %d\n", slice[2:4])
+	fmt.Printf("Slice[4] - []	: %d\n", slice[4:])
+
+	// Append
+	slice = append(slice, 18)
+	fmt.Println(slice, len(slice), cap(slice))
+	slice2 := []int{0, 1, 2, 3, 4, 5, 6, 7, 8}
+	slice = append(slice, slice2...)
+	fmt.Println(slice, len(slice), cap(slice))
 }

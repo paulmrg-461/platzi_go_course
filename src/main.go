@@ -144,4 +144,8 @@ func main() {
 		}
 	}
 
+	// defer keyword execute last function and after execute current
+	defer fmt.Println("World")
+	fmt.Println("Hello")
+	fmt.Println("------")
 }

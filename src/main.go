@@ -28,6 +28,10 @@ func applyCommonOperators(a, b int) (addition, subtraction, multiplication, divi
 	return a + b, a - b, a * b, a / b
 }
 
+func comparePairNumber(number int) bool {
+	return number%2 == 0
+}
+
 func main() {
 
 	const pi float64 = 3.14
@@ -96,4 +100,13 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("Converted value = %d\n", value)
+
+	// Print if number is pair
+	for i := 0; i <= 10; i++ {
+		if comparePairNumber(i) {
+			fmt.Printf("Number %d: is pair\n", i)
+			continue
+		}
+		fmt.Printf("Number %d: is odd\n", i)
+	}
 }

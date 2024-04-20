@@ -10,6 +10,14 @@ func printMessage(message string, iterarions int) {
 	}
 }
 
+func forWhile(condition int) {
+	counter := 0
+	for counter <= condition {
+		fmt.Printf("Current: %d of: %d\n", counter, condition)
+		counter++
+	}
+}
+
 func sum2Integers(a, b int) int {
 	return a + b
 }
@@ -77,4 +85,6 @@ func main() {
 	// Multiple assignment with multiple return functions: Select variables to assign from function
 	addition1, _, _, division1 := applyCommonOperators(x, y)
 	fmt.Printf("Suma: %d, Division: %d\n", addition1, division1)
+
+	forWhile(10)
 }
